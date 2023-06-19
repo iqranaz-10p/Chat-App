@@ -32,7 +32,7 @@ import {
   setDoc,
 } from 'firebase/firestore';
 import { db } from '../../firebase';
-import { DrawerWithNav } from './components/DrawerWithNav';
+import { DrawerWithNav } from '../../components/DrawerWithNav';
 import moment from 'moment';
 import './chat.css';
 import { useDrawer } from '../../context/drawerContext';
@@ -318,7 +318,14 @@ export default function Chat() {
                     <Chip
                       color={msg.sender === user.uid ? 'primary' : 'secondary'}
                       label={
+
                         <Box display='flex' flexDirection='column'>
+                          <div style={{ alignSelf: 'flex-end' }} >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                              <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                            </svg>
+                          </div>
+
                           <span style={{ fontWeight: '500' }}>{msg.message}</span>
                           <Typography variant='body2' color='burlywood' fontWeight={'bold'}>
                             {moment(msg.time.toDate().toString()).format('D-MMM-YY, h:mm a')}

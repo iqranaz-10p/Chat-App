@@ -11,11 +11,11 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Avatar, Chip, Menu, MenuItem, Tooltip } from '@mui/material';
-import { Drawer, DrawerHeader, StyledBadge, AppBar } from '../Chat';
-import { useUserAuth } from '../../../context/userAuthContext';
+import { Drawer, DrawerHeader, StyledBadge, AppBar } from '../pages/Chat/Chat';
+import { useUserAuth } from '../context/userAuthContext';
 import { collection, documentId, onSnapshot, query, where } from 'firebase/firestore';
-import { db } from '../../../firebase';
-import { useDrawer } from '../../../context/drawerContext';
+import { db } from '../firebase';
+import { useDrawer } from '../context/drawerContext';
 
 export function DrawerWithNav(props) {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -193,7 +193,7 @@ export function DrawerWithNav(props) {
                     label={unreadCount}
                     color={unreadCount > 0 ? 'primary' : 'secondary'}
                     sx={{ display: open && unreadCount > 0 ? 'flex' : 'none' }}
-                    // variant='outlined'
+                  // variant='outlined'
                   />
                 </ListItemButton>
               </ListItem>
@@ -254,7 +254,7 @@ export function DrawerWithNav(props) {
           </IconButton>
           <Box display='flex' justifyContent='space-between' width='100%'>
             <Typography variant='h6' noWrap component='div'>
-              Penguins Chat
+              Chat Application
             </Typography>
             <Box
               sx={{
